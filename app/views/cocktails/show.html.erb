@@ -1,0 +1,10 @@
+
+<p> Your selected Cocktail </p>
+
+
+<h2><%= @cocktail.name %></h2>
+<%= render 'doses/form' %>
+
+
+<p><%= link_to 'Edit this Cocktail', edit_cocktail_path(params[:id]), {class:"btn btn-primary"} %></p>
+

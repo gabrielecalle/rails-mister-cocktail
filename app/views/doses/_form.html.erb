@@ -1,0 +1,8 @@
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :ingredient, collection: @ingredients %>
+  <%= f.input :description%>
+
+  <%= f.submit "Submit Dose", class: "btn btn-primary"%>
+<% end %>
