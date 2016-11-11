@@ -22,12 +22,18 @@ Ingredient.destroy_all
 
 url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 user_serialized = open(url).read
-request = JSON.parse(user_serialized)
+ingredients = JSON.parse(user_serialized)
 
 
-request = request["drinks"]
+request = ingredients["drinks"]
 
 request.each do |key|
   ingredient = Ingredient.new(name: key["strIngredient1"])
   ingredient.save
 end
+
+
+
+# ou
+# ingredients.map { |ingredient| {name: ingredient["strIngredient1"] }}
+# Ingredient.create(ingredients)

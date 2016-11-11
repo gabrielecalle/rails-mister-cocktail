@@ -1,10 +1,19 @@
 
 <p> Your selected Cocktail </p>
 
-
 <h2><%= @cocktail.name %></h2>
+
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <% if dose.persisted? %>
+    <li>
+    <%= dose.description %> - <%= dose.ingredient.name %>
+    <%= link_to "&times;".html_safe, dose, method: :delete %>
+    </li>
+    <% end %>
+  <% end %>
+</ul>
+
 <%= render 'doses/form' %>
 
-
 <p><%= link_to 'Edit this Cocktail', edit_cocktail_path(params[:id]), {class:"btn btn-primary"} %></p>
-
