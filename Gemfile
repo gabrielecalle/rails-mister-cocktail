@@ -32,7 +32,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'cloudinary'
+gem 'figaro'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -49,6 +50,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+
 end
 
 
