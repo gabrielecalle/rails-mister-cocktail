@@ -1,8 +1,13 @@
 <h1>List of Available Cocktails</h1>
 
+<div>
+<%= cl_image_tag("sample.jpg") %>
+</div>
+
+
 
 <% @cocktails.each do |cocktail| %>
-<p><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></p>
+  <p><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></p>
 <% end %>
 
 

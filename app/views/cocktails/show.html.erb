@@ -3,13 +3,15 @@
 
 <h2><%= @cocktail.name %></h2>
 
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 <ul>
   <% @cocktail.doses.each do |dose| %>
     <% if dose.persisted? %>
-    <li>
-    <%= dose.description %> - <%= dose.ingredient.name %>
-    <%= link_to "&times;".html_safe, dose, method: :delete %>
-    </li>
+      <li>
+
+      <%= dose.description %> - <%= dose.ingredient.name %>
+      <%= link_to "&times;".html_safe, dose, method: :delete %>
+      </li>
     <% end %>
   <% end %>
 </ul>
